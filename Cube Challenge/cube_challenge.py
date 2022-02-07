@@ -74,9 +74,9 @@ class CubeIntersection:
             if (Ax4>Bx1 and Ay4>By1 and Az4>Bz1):
                 volume = ((Bx1-Ax4)*(By1-Ay4)*(Bz1-Az4))
                 volume_round = (round(volume))
-                volume_final = volume_round
+                volume_final = abs(volume_round) 
 
-                return True, volume_round
+                return True, volume_final
 
             elif (Bx4>Ax1 and By4>Ay1 and Bz4>Az1):
                 volume = ((Ax1-Bx4)*(Ay1-By4)*(Az1-Bz4))
@@ -89,6 +89,6 @@ class CubeIntersection:
                 volume = 0
                 return False, volume
 
-intersection = CubeIntersection(5,10,10,0,2,8,9,0)
+intersection = CubeIntersection(5,10,10,0,12,10,4,4)
 
 print(intersection.intersection_of_cubeA_and_cubeB())
